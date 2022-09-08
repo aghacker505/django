@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %} Conatct {% endblock title %}
+
+{% block body %}
+
+<div class="container my-4">
+    <img src="/static/img/4.jpg" class="d-block w-100" alt="...">
+</div>
+<div class="container">
+    <h1 class="text-center">Contact Us</h1>
+    <form method="post" action="/contact">
+    {% csrf_token %}
+        <div class="from-group">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="Name" name="name" placeholder="Enter your Name ">
+        </div>
+
+        <div class="from-group my-4">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your Email" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+
+        <div class="from-group my-3">
+            <label for="phone" class="form-label">Phone</label>
+            <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter your Phone number">
+        </div>
+
+        <div class="from-group">
+            <label for="desc">Tell me about what you want to cantact me for....</label>
+            <textarea class="form-control" id="desc" rows="4" name="desc"></textarea>
+        </div>
+        
+        <div class="from-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Agree that we will send you mail and meassage</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+{% endblock body %}
